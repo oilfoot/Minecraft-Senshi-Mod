@@ -9,6 +9,8 @@ public class Senshi implements ModInitializer {
 
     public static final String MOD_ID = "senshi";
 
+    //Test Comment
+
     @Override
     public void onInitialize() {
         GeckoLib.initialize();
