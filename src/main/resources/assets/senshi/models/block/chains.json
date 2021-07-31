@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "senshi:blocks/chainbind",
-		"particle": "senshi:blocks/chainbind"
+		"0": "senshi:blocks/chains",
+		"particle": "senshi:blocks/chains"
 	},
 	"elements": [
 		{

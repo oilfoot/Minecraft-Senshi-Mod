@@ -3,6 +3,9 @@
   "item.senshi.blue_scales": "Blue Scales",
   "item.senshi.enhancement_dust": "Enhancement Dust",
 
+  "block.senshi.chains": "Chains",
+  "block.senshi.katanablock": "Katana",
+
   "item.senshi.katana": "Katana",
 
   "item.senshi.mapple_kabuto": "Mapple Kabuto",
@@ -15,5 +18,5 @@
   "item.senshi.takeda_haidate":  "Takeda Haidate",
   "item.senshi.takeda_waraji": "Takeda Waraji",
 
-  "entity.senshi."
+  "entity.senshi.ogrerageentity": "Ogre Of Rage"
 }

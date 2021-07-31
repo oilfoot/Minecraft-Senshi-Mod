@@ -18,10 +18,14 @@ public class ModItems{
     public static final Item BLUE_SCALES = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item ENHANCEMENT_DUST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
 
-//ToolItems//
+//BlockItems
+    public static final BlockItem CHAINS = new BlockItem(ModBlocks.CHAINS, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem KATANABLOCK = new BlockItem(ModBlocks.KATANABLOCK,new Item.Settings());
+
+//ToolItems
     public static final ToolItem KATANA = new SwordItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
 
-//ArmorItems//
+//ArmorItems
 
     //Mapple Armor
     public static final Item MAPPLE_KABUTO = new MappleSamuraiArmorItem(MappleSamuraiArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
@@ -41,6 +45,10 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "red_scales"), RED_SCALES);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "blue_scales"), BLUE_SCALES);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "enhancement_dust"), ENHANCEMENT_DUST);
+
+    //BlockItems
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "chains"), CHAINS);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katanablock"), KATANABLOCK);
 
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
