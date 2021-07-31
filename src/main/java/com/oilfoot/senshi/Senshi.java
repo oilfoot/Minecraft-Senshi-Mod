@@ -5,7 +5,7 @@ import com.oilfoot.senshi.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
 
-public class senshi  implements ModInitializer {
+public class Senshi implements ModInitializer {
 
     public static final String MOD_ID = "senshi";
 

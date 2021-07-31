@@ -22,7 +22,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.oilfoot.senshi.senshi"
+      "com.oilfoot.senshi.Senshi"
     ],
     "client": [
       "com.oilfoot.senshi.SenshiClient"

@@ -5,7 +5,7 @@ import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorMaterial;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorMaterial;
-import com.oilfoot.senshi.senshi;
+import com.oilfoot.senshi.Senshi;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -38,25 +38,25 @@ public class ModItems{
     public static void RegisterItems() {
 
     //basicItems
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "red_scales"), RED_SCALES);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "blue_scales"), BLUE_SCALES);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "enhancement_dust"), ENHANCEMENT_DUST);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "red_scales"), RED_SCALES);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "blue_scales"), BLUE_SCALES);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "enhancement_dust"), ENHANCEMENT_DUST);
 
     //ToolItems//
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "katana"), KATANA);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
 
     //ArmorItems//
 
         //Mapple Armor
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "mapple_kabuto"), MAPPLE_KABUTO);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "mapple_do"), MAPPLE_DO);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "mapple_haidate"), MAPPLE_HAIDATE);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "mapple_waraji"), MAPPLE_WARAJI);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_kabuto"), MAPPLE_KABUTO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_do"), MAPPLE_DO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_haidate"), MAPPLE_HAIDATE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_waraji"), MAPPLE_WARAJI);
 
         //Tadeka Armor
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "takeda_kabuto"), TAKEDA_KABUTO);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "takeda_do"), TAKEDA_DO);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "takeda_haidate"), TAKEDA_HAIDATE);
-        Registry.register(Registry.ITEM, new Identifier(senshi.MOD_ID, "takeda_waraji"), TAKEDA_WARAJI);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_kabuto"), TAKEDA_KABUTO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_do"), TAKEDA_DO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_haidate"), TAKEDA_HAIDATE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_waraji"), TAKEDA_WARAJI);
     }
 }

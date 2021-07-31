@@ -1,7 +1,7 @@
 package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageEntity;
-import com.oilfoot.senshi.senshi;
+import com.oilfoot.senshi.Senshi;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -24,7 +24,7 @@ public class ModEntities {
 
     public static <T extends Entity> EntityType<T> buildEntity(EntityType.EntityFactory<T> entity, Class<T> entityClass, float width, float height) {
         String name = entityClass.getSimpleName().toLowerCase();
-        return EntityRegistryBuilder.<T>createBuilder(new Identifier(senshi.MOD_ID, name)).entity(entity)
+        return EntityRegistryBuilder.<T>createBuilder(new Identifier(Senshi.MOD_ID, name)).entity(entity)
                 .category(SpawnGroup.CREATURE).dimensions(EntityDimensions.changing(width, height)).build();
 
     }
