@@ -2,6 +2,8 @@ package com.oilfoot.senshi;
 
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorRenderer;
+import com.oilfoot.senshi.armor.shinobi.ShinobiArmorItem;
+import com.oilfoot.senshi.armor.shinobi.ShinobiArmorRenderer;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorRenderer;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageRenderer;
@@ -25,6 +27,7 @@ public class SenshiClient implements ClientModInitializer {
         //Samurai Armor
         GeoArmorRenderer.registerArmorRenderer(MappleSamuraiArmorItem.class, new MappleSamuraiArmorRenderer());
         GeoArmorRenderer.registerArmorRenderer(TakedaSamuraiArmorItem.class, new TakedaSamuraiArmorRenderer());
+        GeoArmorRenderer.registerArmorRenderer(ShinobiArmorItem.class, new ShinobiArmorRenderer());
         EntityRendererRegistry.INSTANCE.register(ModEntities.OGRE_RAGE_ENTITY,
                 (entityRenderDispatcher, context) -> new OgreRageRenderer(entityRenderDispatcher));
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHAINS, RenderLayer.getCutout());

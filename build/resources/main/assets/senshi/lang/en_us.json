@@ -1,0 +1,22 @@
+{
+  "item.senshi.red_scales": "Red Scales",
+  "item.senshi.blue_scales": "Blue Scales",
+  "item.senshi.enhancement_dust": "Enhancement Dust",
+
+  "block.senshi.chains": "Chains",
+  "block.senshi.katanablock": "Katana",
+
+  "item.senshi.katana": "Katana",
+
+  "item.senshi.mapple_kabuto": "Mapple Kabuto",
+  "item.senshi.mapple_do": "Mapple Do",
+  "item.senshi.mapple_haidate":  "Mapple Haidate",
+  "item.senshi.mapple_waraji": "Mapple Waraji",
+
+  "item.senshi.takeda_kabuto": "Takeda Kabuto",
+  "item.senshi.takeda_do": "Takeda Do",
+  "item.senshi.takeda_haidate":  "Takeda Haidate",
+  "item.senshi.takeda_waraji": "Takeda Waraji",
+
+  "entity.senshi.ogrerageentity": "Ogre Of Rage"
+}

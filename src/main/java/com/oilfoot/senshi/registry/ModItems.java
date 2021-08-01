@@ -1,8 +1,11 @@
 package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.ToolMaterials.KatanaToolMaterial;
+import com.oilfoot.senshi.ToolMaterials.SaiToolMaterial;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorMaterial;
+import com.oilfoot.senshi.armor.shinobi.ShinobiArmorItem;
+import com.oilfoot.senshi.armor.shinobi.ShinobiArmorMaterial;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorMaterial;
 import com.oilfoot.senshi.Senshi;
@@ -24,6 +27,7 @@ public class ModItems{
 
 //ToolItems
     public static final ToolItem KATANA = new SwordItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT));
 
 //ArmorItems
 
@@ -39,6 +43,12 @@ public class ModItems{
     public static final Item TAKEDA_HAIDATE = new TakedaSamuraiArmorItem(TakedaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item TAKEDA_WARAJI = new TakedaSamuraiArmorItem(TakedaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
+    //Shinobi Armor
+    public static final Item SHINOBI_HOOD = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SHINOBI_ROBE = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SHINOBI_HAIDATE = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SHINOBI_SHOES = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
+
     public static void RegisterItems() {
 
     //basicItems
@@ -52,6 +62,7 @@ public class ModItems{
 
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sai"), SAI);
 
     //ArmorItems//
 
@@ -66,5 +77,12 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_do"), TAKEDA_DO);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_haidate"), TAKEDA_HAIDATE);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "takeda_waraji"), TAKEDA_WARAJI);
+
+        //Shinobi Armor
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_hood"), SHINOBI_HOOD);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_robe"), SHINOBI_ROBE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_haidate"), SHINOBI_HAIDATE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_shoes"), SHINOBI_SHOES);
+
     }
 }

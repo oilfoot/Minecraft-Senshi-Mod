@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "senshi",
+  "version": "1.0.0",
+
+  "name": "Senshi Mod",
+  "description": "Senshi is a Japanese inspired mod, Thanks to MrSterner for Helping and coaching me a lot in fabric",
+  "authors": [
+    "oilfoot",
+    "MrSterner"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "",
+    "sources": ""
+  },
+
+  "Code license": "CC0-1.0",
+  "Assets license": "All Rights Reserved",
+  "icon": "assets/senshi/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.oilfoot.senshi.Senshi"
+    ],
+    "client": [
+      "com.oilfoot.senshi.SenshiClient"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
