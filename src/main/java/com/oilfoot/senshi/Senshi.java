@@ -1,5 +1,6 @@
 package com.oilfoot.senshi;
 
+import com.oilfoot.senshi.generation.ores.EnhancementOreGeneration;
 import com.oilfoot.senshi.registry.ModBlocks;
 import com.oilfoot.senshi.registry.ModEntities;
 import com.oilfoot.senshi.registry.ModItems;
@@ -17,5 +18,6 @@ public class Senshi implements ModInitializer {
         new ModEntities();
         ModEntities.init();
         ModBlocks.registerBlocks();
+        EnhancementOreGeneration.GenerateEnhacementOre();
     }
 }

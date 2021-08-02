@@ -23,11 +23,12 @@ public class ModItems{
 
 //BlockItems
     public static final BlockItem CHAINS = new BlockItem(ModBlocks.CHAINS, new Item.Settings().group(ItemGroup.DECORATIONS));
-    public static final BlockItem KATANABLOCK = new BlockItem(ModBlocks.KATANABLOCK,new Item.Settings());
+    public static final BlockItem KATANABLOCK = new BlockItem(ModBlocks.KATANABLOCK, new Item.Settings());
+    public static final BlockItem ENHANCEMENT_ORE = new BlockItem(ModBlocks.ENHANCEMENT_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
 
 //ToolItems
     public static final ToolItem KATANA = new SwordItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
-    public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT).maxCount(2));
 
 //ArmorItems
 
@@ -59,6 +60,7 @@ public class ModItems{
     //BlockItems
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "chains"), CHAINS);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katanablock"), KATANABLOCK);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "enhancement_ore"), ENHANCEMENT_ORE);
 
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);

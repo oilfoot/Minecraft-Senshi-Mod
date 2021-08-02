@@ -5,8 +5,10 @@
 
   "block.senshi.chains": "Chains",
   "block.senshi.katanablock": "Katana",
+  "block.senshi.enhancement_ore": "Enhancement Ore",
 
   "item.senshi.katana": "Katana",
+  "item.senshi.sai": "Sai",
 
   "item.senshi.mapple_kabuto": "Mapple Kabuto",
   "item.senshi.mapple_do": "Mapple Do",
@@ -17,6 +19,11 @@
   "item.senshi.takeda_do": "Takeda Do",
   "item.senshi.takeda_haidate":  "Takeda Haidate",
   "item.senshi.takeda_waraji": "Takeda Waraji",
+
+  "item.senshi.shinobi_hood": "Shinobi Hood",
+  "item.senshi.shinobi_robe": "Shinobi Robe",
+  "item.senshi.shinobi_haidate":  "Shinobi Haidate",
+  "item.senshi.shinobi_shoes": "Shinobi Waraji",
 
   "entity.senshi.ogrerageentity": "Ogre Of Rage"
 }
