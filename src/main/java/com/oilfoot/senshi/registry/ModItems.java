@@ -1,6 +1,8 @@
 package com.oilfoot.senshi.registry;
 
+import com.oilfoot.senshi.ToolMaterials.BoToolMaterial;
 import com.oilfoot.senshi.ToolMaterials.KatanaToolMaterial;
+import com.oilfoot.senshi.ToolMaterials.NaginataToolMaterial;
 import com.oilfoot.senshi.ToolMaterials.SaiToolMaterial;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorMaterial;
@@ -9,6 +11,7 @@ import com.oilfoot.senshi.armor.shinobi.ShinobiArmorMaterial;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorMaterial;
 import com.oilfoot.senshi.Senshi;
+import com.oilfoot.senshi.items.throwables.shuriken.shurikenItem;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -21,6 +24,10 @@ public class ModItems{
     public static final Item BLUE_SCALES = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item ENHANCEMENT_DUST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
 
+//Special Items
+    public static final Item SHURIKEN = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(256));
+    public static final Item KUNAI = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
+
 //BlockItems
     public static final BlockItem CHAINS = new BlockItem(ModBlocks.CHAINS, new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final BlockItem KATANABLOCK = new BlockItem(ModBlocks.KATANABLOCK, new Item.Settings());
@@ -28,7 +35,9 @@ public class ModItems{
 
 //ToolItems
     public static final ToolItem KATANA = new SwordItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
-    public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT).maxCount(2));
+    public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem NAGINATA = new SwordItem(NaginataToolMaterial.INSTANCE, 2, -3.4F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem BO = new SwordItem(BoToolMaterial.INSTANCE, 0, -1.8F, new Item.Settings().group(ItemGroup.COMBAT));
 
 //ArmorItems
 
@@ -57,6 +66,10 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "blue_scales"), BLUE_SCALES);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "enhancement_dust"), ENHANCEMENT_DUST);
 
+    //specialItems
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shuriken"), SHURIKEN);
+        Registry.register(Registry.ITEM,new Identifier(Senshi.MOD_ID, "kunai"), KUNAI);
+
     //BlockItems
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "chains"), CHAINS);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katanablock"), KATANABLOCK);
@@ -65,6 +78,8 @@ public class ModItems{
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sai"), SAI);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "naginata"), NAGINATA);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "bo"), BO);
 
     //ArmorItems//
 
