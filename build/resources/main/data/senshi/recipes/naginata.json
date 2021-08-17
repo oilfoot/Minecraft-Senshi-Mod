@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #i",
+    "#i#",
+    "/# "
+  ],
+  "key": {
+    "#": {
+      "item": "senshi:enhancement_dust"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "/": {
+      "item": "senshi:bo"
+    }
+  },
+  "result": {
+    "item": "senshi:naginata",
+    "count": 1
+  }
+}

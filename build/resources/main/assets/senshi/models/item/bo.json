@@ -1,0 +1,54 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "bo",
+	"texture_size": [8, 35],
+	"textures": {
+		"0": "senshi:items/bo",
+		"particle": "senshi:items/bo"
+	},
+	"elements": [
+		{
+			"from": [7, -14, 7],
+			"to": [9, 21, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 16], "texture": "#0"},
+				"east": {"uv": [12, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [4, 0, 8, 16], "texture": "#0"},
+				"west": {"uv": [8, 0, 12, 16], "texture": "#0"},
+				"up": {"uv": [12, 2.28571, 16, 3.2], "texture": "#0"},
+				"down": {"uv": [12, 2.28571, 16, 3.2], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 5.75, 1],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 5.75, 1],
+			"scale": [0.75, 0.751, 0.751]
+		},
+		"firstperson_righthand": {
+			"rotation": [-21.25, 8, -6.25],
+			"translation": [9.5, 16.75, -11]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-16.75, 0, -9.25],
+			"translation": [13.25, 15, -11.5]
+		},
+		"ground": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 0, 5.75]
+		},
+		"gui": {
+			"rotation": [-46.25, -32.75, -53.75],
+			"translation": [3, 3.25, 0]
+		},
+		"fixed": {
+			"rotation": [58.5, -43.25, 67],
+			"translation": [-2.5, 3.75, -0.5]
+		}
+	}
+}

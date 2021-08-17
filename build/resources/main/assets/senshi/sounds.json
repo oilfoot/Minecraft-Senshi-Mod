@@ -1,0 +1,14 @@
+{
+  "shuriken_throw": {
+    "subtitle": "subtitles.senshi.shuriken_throw",
+    "sounds": [
+      "senshi:shuriken_throw"
+    ]
+  },
+  "shuriken_land": {
+    "subtitle": "subtitles.senshi.shuriken_land",
+    "sounds": [
+      "senshi:shuriken_land"
+    ]
+  }
+}
