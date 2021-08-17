@@ -1,9 +1,6 @@
 package com.oilfoot.senshi.registry;
 
-import com.oilfoot.senshi.ToolMaterials.BoToolMaterial;
-import com.oilfoot.senshi.ToolMaterials.KatanaToolMaterial;
-import com.oilfoot.senshi.ToolMaterials.NaginataToolMaterial;
-import com.oilfoot.senshi.ToolMaterials.SaiToolMaterial;
+import com.oilfoot.senshi.ToolMaterials.*;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorMaterial;
 import com.oilfoot.senshi.armor.shinobi.ShinobiArmorItem;
@@ -11,9 +8,17 @@ import com.oilfoot.senshi.armor.shinobi.ShinobiArmorMaterial;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorMaterial;
 import com.oilfoot.senshi.Senshi;
+import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorItem;
+import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorMaterial;
+import com.oilfoot.senshi.items.katana.kazeshiniKatana;
+import com.oilfoot.senshi.items.throwables.shuriken.enderShurikenItem;
 import com.oilfoot.senshi.items.throwables.shuriken.shurikenItem;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -25,7 +30,8 @@ public class ModItems{
     public static final Item ENHANCEMENT_DUST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
 
 //Special Items
-    public static final Item SHURIKEN = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(256));
+    public static final Item SHURIKEN = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item ENDER_SHURIKEN = new enderShurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item KUNAI = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
 
 //BlockItems
@@ -38,6 +44,7 @@ public class ModItems{
     public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem NAGINATA = new SwordItem(NaginataToolMaterial.INSTANCE, 2, -3.4F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem BO = new SwordItem(BoToolMaterial.INSTANCE, 0, -1.8F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem KAZESHINI = new kazeshiniKatana(kazeshiniToolMaterial.INSTANCE, 0, -1F, new Item.Settings().group(ItemGroup.COMBAT));
 
 //ArmorItems
 
@@ -59,6 +66,12 @@ public class ModItems{
     public static final Item SHINOBI_HAIDATE = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item SHINOBI_SHOES = new ShinobiArmorItem(ShinobiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
+    //Tokugawa Armor
+    public static final Item TOKUGAWA_KABUTO = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item TOKUGAWA_DO = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item TOKUGAWA_HAIDATE = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item TOKUGAWA_WARAJI = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
+
     public static void RegisterItems() {
 
     //basicItems
@@ -68,6 +81,7 @@ public class ModItems{
 
     //specialItems
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shuriken"), SHURIKEN);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "ender_shuriken"), ENDER_SHURIKEN);
         Registry.register(Registry.ITEM,new Identifier(Senshi.MOD_ID, "kunai"), KUNAI);
 
     //BlockItems
@@ -80,6 +94,14 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sai"), SAI);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "naginata"), NAGINATA);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "bo"), BO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "kazeshini"), KAZESHINI);
+        ServerTickEvents.END_WORLD_TICK.register((world) -> {
+            for (ServerPlayerEntity player : world.getPlayers()){
+                if (player.inventory.getMainHandStack().getItem() instanceof kazeshiniKatana) {
+                    player.addStatusEffect(((new StatusEffectInstance(StatusEffects.SPEED, 20 * 3, 1))));
+                }
+            }
+        });
 
     //ArmorItems//
 
@@ -100,6 +122,12 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_robe"), SHINOBI_ROBE);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_haidate"), SHINOBI_HAIDATE);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shinobi_shoes"), SHINOBI_SHOES);
+
+        //Tokugawa Armor
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_kabuto"), TOKUGAWA_KABUTO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_do"), TOKUGAWA_DO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_haidate"), TOKUGAWA_HAIDATE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_waraji"), TOKUGAWA_WARAJI);
 
     }
 }

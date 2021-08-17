@@ -2,6 +2,7 @@ package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageEntity;
 import com.oilfoot.senshi.Senshi;
+import com.oilfoot.senshi.items.throwables.shuriken.enderShurikenEntity;
 import com.oilfoot.senshi.items.throwables.shuriken.shurikenEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -41,7 +42,13 @@ public class ModEntities {
                     .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
     );
 
-   /*public static final EntityType<shurikenEntity> SHURIKEN_ENTITY = buildEntity(shurikenEntity::new,
-            shurikenEntity.class, 1.0F, 2.0F);*/
+    public static final EntityType<enderShurikenEntity> ENDER_SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(Senshi.MOD_ID, "ender_shuriken"),
+            FabricEntityTypeBuilder.<enderShurikenEntity>create(SpawnGroup.MISC, enderShurikenEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
+                    .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+                    .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
+    );
 
 }

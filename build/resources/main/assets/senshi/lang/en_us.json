@@ -11,6 +11,9 @@
   "item.senshi.sai": "Sai",
   "item.senshi.naginata": "Naginata",
   "item.senshi.bo": "Bo",
+  "item.senshi.shuriken": "Shuriken",
+  "item.senshi.ender_shuriken": "Ender Shuriken",
+  "item.senshi.kazeshini": "Kazeshini Katana",
 
   "item.senshi.mapple_kabuto": "Mapple Kabuto",
   "item.senshi.mapple_do": "Mapple Do",
@@ -27,5 +30,13 @@
   "item.senshi.shinobi_haidate":  "Shinobi Haidate",
   "item.senshi.shinobi_shoes": "Shinobi Waraji",
 
-  "entity.senshi.ogrerageentity": "Ogre Of Rage"
+  "item.senshi.tokugawa_kabuto": "Tokugawa Kabuto",
+  "item.senshi.tokugawa_do": "Tokugawa Do",
+  "item.senshi.tokugawa_haidate":  "Tokugawa Haidate",
+  "item.senshi.tokugawa_waraji": "Tokugawa Waraji",
+
+  "entity.senshi.ogrerageentity": "Ogre Of Rage",
+
+  "text.senshi.kazenshiText": "§5Speed II",
+ "text.senshi.enderShurikenText": "§9Advanced Ender Pearl"
 }
