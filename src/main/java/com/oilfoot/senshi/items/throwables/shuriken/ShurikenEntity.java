@@ -1,47 +1,22 @@
 package com.oilfoot.senshi.items.throwables.shuriken;
 
-import com.google.common.collect.Sets;
 import com.oilfoot.senshi.Senshi;
 import com.oilfoot.senshi.registry.ModEntities;
 import com.oilfoot.senshi.registry.ModItems;
-import io.netty.buffer.Unpooled;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.ProjectileEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.entity.projectile.thrown.ThrownEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.particle.ItemStackParticleEffect;
-import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.potion.Potions;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-import java.util.UUID;
-
-public class shurikenEntity extends PersistentProjectileEntity {
+public class ShurikenEntity extends PersistentProjectileEntity {
     public boolean isStopped = false;
 
     @Override
@@ -54,16 +29,16 @@ public class shurikenEntity extends PersistentProjectileEntity {
         return new ItemStack(ModItems.SHURIKEN);
     }
 
-    public shurikenEntity(EntityType<? extends shurikenEntity> entityType, World world) {
+    public ShurikenEntity(EntityType<? extends ShurikenEntity> entityType, World world) {
         super(entityType, world);
     }
-    public shurikenEntity(World world, double x, double y, double z) {
+    public ShurikenEntity(World world, double x, double y, double z) {
         super(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, x, y, z, world);
     }
-    public shurikenEntity(World world) {
+    public ShurikenEntity(World world) {
         super(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, world);
     }
-    public shurikenEntity(World world, LivingEntity owner) {
+    public ShurikenEntity(World world, LivingEntity owner) {
         super(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, owner, world);
     }
 

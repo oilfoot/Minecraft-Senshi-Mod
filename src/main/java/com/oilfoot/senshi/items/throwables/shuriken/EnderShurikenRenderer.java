@@ -6,22 +6,23 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3f;
 
-public class shurikenRenderer extends shurikenProjectileRenderer<shurikenEntity> {
+public class EnderShurikenRenderer extends ShurikenProjectileRenderer<EnderShurikenEntity> {
 
-    public static final ItemStack STACK = new ItemStack(ModItems.SHURIKEN);
+    public static final ItemStack STACK = new ItemStack(ModItems.ENDER_SHURIKEN);
 
-    public shurikenRenderer(EntityRenderDispatcher dispatcher) {
-        super(dispatcher);
+    public EnderShurikenRenderer(EntityRendererFactory.Context ctx) {
+        super(ctx);
     }
 
     @Override
-    public void render(shurikenEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
+    public void render(EnderShurikenEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
         if (!entity.isStopped)
@@ -35,7 +36,7 @@ public class shurikenRenderer extends shurikenProjectileRenderer<shurikenEntity>
                 light,
                 OverlayTexture.DEFAULT_UV,
                 matrices,
-                vertexConsumers
+                vertexConsumers, 0
         );
         matrices.pop();
 
@@ -43,7 +44,7 @@ public class shurikenRenderer extends shurikenProjectileRenderer<shurikenEntity>
     }
 
     @Override
-    public Identifier getTexture(shurikenEntity entity) {
-        return new Identifier(Senshi.MOD_ID, "textures/items/shuriken.png");
+    public Identifier getTexture(EnderShurikenEntity entity) {
+        return new Identifier(Senshi.MOD_ID, "textures/items/ender_shuriken.png");
     }
 }

@@ -2,8 +2,8 @@ package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageEntity;
 import com.oilfoot.senshi.Senshi;
-import com.oilfoot.senshi.items.throwables.shuriken.enderShurikenEntity;
-import com.oilfoot.senshi.items.throwables.shuriken.shurikenEntity;
+import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenEntity;
+import com.oilfoot.senshi.items.throwables.shuriken.ShurikenEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -33,19 +33,19 @@ public class ModEntities {
 
     }
 
-    public static final EntityType<shurikenEntity> SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
+    public static final EntityType<ShurikenEntity> SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(Senshi.MOD_ID, "shuriken"),
-            FabricEntityTypeBuilder.<shurikenEntity>create(SpawnGroup.MISC, shurikenEntity::new)
+            FabricEntityTypeBuilder.<ShurikenEntity>create(SpawnGroup.MISC, ShurikenEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
                     .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
                     .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
     );
 
-    public static final EntityType<enderShurikenEntity> ENDER_SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
+    public static final EntityType<EnderShurikenEntity> ENDER_SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(Senshi.MOD_ID, "ender_shuriken"),
-            FabricEntityTypeBuilder.<enderShurikenEntity>create(SpawnGroup.MISC, enderShurikenEntity::new)
+            FabricEntityTypeBuilder.<EnderShurikenEntity>create(SpawnGroup.MISC, EnderShurikenEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
                     .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
                     .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS

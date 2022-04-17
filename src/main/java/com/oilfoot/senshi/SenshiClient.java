@@ -1,37 +1,28 @@
 package com.oilfoot.senshi;
 
-import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorRenderer;
-import com.oilfoot.senshi.armor.shinobi.ShinobiArmorItem;
 import com.oilfoot.senshi.armor.shinobi.ShinobiArmorRenderer;
-import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorRenderer;
-import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorRenderer;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageRenderer;
 import com.oilfoot.senshi.items.throwables.shuriken.EntitySpawnPacket;
-import com.oilfoot.senshi.items.throwables.shuriken.enderShurikenRenderer;
-import com.oilfoot.senshi.items.throwables.shuriken.shurikenEntity;
-import com.oilfoot.senshi.items.throwables.shuriken.shurikenRenderer;
 import com.oilfoot.senshi.registry.ModBlocks;
 import com.oilfoot.senshi.registry.ModEntities;
+import com.oilfoot.senshi.registry.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
-import net.fabricmc.fabric.impl.networking.ClientSidePacketRegistryImpl;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.ProjectileEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
-import software.bernie.geckolib3.renderer.geo.GeoArmorRenderer;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 import java.util.UUID;
 
@@ -43,18 +34,22 @@ public class SenshiClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         //Samurai Armor
-        GeoArmorRenderer.registerArmorRenderer(MappleSamuraiArmorItem.class, new MappleSamuraiArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(TakedaSamuraiArmorItem.class, new TakedaSamuraiArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(ShinobiArmorItem.class, new ShinobiArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(TokugawaSamuraiArmorItem.class, new TokugawaSamuraiArmorRenderer());
+
+        GeoArmorRenderer.registerArmorRenderer(new MappleSamuraiArmorRenderer(), ModItems.MAPPLE_KABUTO, ModItems.MAPPLE_DO, ModItems.MAPPLE_HAIDATE, ModItems.MAPPLE_WARAJI);
+
+        GeoArmorRenderer.registerArmorRenderer(new TakedaSamuraiArmorRenderer(), ModItems.TAKEDA_KABUTO, ModItems.TAKEDA_DO, ModItems.TAKEDA_HAIDATE, ModItems.TAKEDA_WARAJI);
+        GeoArmorRenderer.registerArmorRenderer(new ShinobiArmorRenderer(), ModItems.SHINOBI_HOOD, ModItems.SHINOBI_ROBE, ModItems.SHINOBI_HAIDATE, ModItems.SHINOBI_SHOES);
+        GeoArmorRenderer.registerArmorRenderer(new TokugawaSamuraiArmorRenderer(), ModItems.TOKUGAWA_KABUTO, ModItems.TOKUGAWA_DO, ModItems.TOKUGAWA_HAIDATE, ModItems.TOKUGAWA_WARAJI);
 
         //Entity
-        EntityRendererRegistry.INSTANCE.register(ModEntities.OGRE_RAGE_ENTITY,
-                (entityRenderDispatcher, context) -> new OgreRageRenderer(entityRenderDispatcher));
+        EntityRendererRegistry.INSTANCE.register(ModEntities.OGRE_RAGE_ENTITY, OgreRageRenderer::new);
 
+        /* TODO this
         EntityRendererRegistry.INSTANCE.register(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
                 new shurikenRenderer(entityRenderDispatcher));
         receiveEntityPacket();
+
+
 
         EntityRendererRegistry.INSTANCE.register(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
                 new shurikenRenderer(entityRenderDispatcher) {});
@@ -65,7 +60,7 @@ public class SenshiClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE.register(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
                 new enderShurikenRenderer(entityRenderDispatcher) {});
-
+         */
         //Blocks
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHAINS, RenderLayer.getCutout());
 
@@ -91,13 +86,12 @@ public class SenshiClient implements ClientModInitializer {
                     throw new IllegalStateException("Failed to create instance of entity \"" + Registry.ENTITY_TYPE.getId(et) + "\"!");
                 e.updateTrackedPosition(pos);
                 e.setPos(pos.x, pos.y, pos.z);
-                e.pitch = pitch;
-                e.yaw = yaw;
-                e.setEntityId(entityId);
+                e.setPitch(pitch);
+                e.getYaw(yaw);
+                e.setId(entityId);
                 e.setUuid(uuid);
                 MinecraftClient.getInstance().world.addEntity(entityId, e);
             });
         });
     }
-
 }

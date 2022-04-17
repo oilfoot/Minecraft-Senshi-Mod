@@ -1,6 +1,7 @@
 package com.oilfoot.senshi.armor.tokugawa;
 
-import software.bernie.geckolib3.renderer.geo.GeoArmorRenderer;
+
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 public class TokugawaSamuraiArmorRenderer extends GeoArmorRenderer<TokugawaSamuraiArmorItem> {
     public TokugawaSamuraiArmorRenderer() {

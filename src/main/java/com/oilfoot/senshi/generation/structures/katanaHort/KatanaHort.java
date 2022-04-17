@@ -1,6 +1,7 @@
 package com.oilfoot.senshi.generation.structures.katanaHort;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.structure.StructureGeneratorFactory;
 import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructureStart;
 import net.minecraft.util.BlockRotation;
@@ -13,8 +14,12 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 
-public class katanaHort extends StructureFeature<DefaultFeatureConfig> {
-    public katanaHort(Codec<DefaultFeatureConfig> codec) {
+public class KatanaHort extends StructureFeature<DefaultFeatureConfig> {
+    public KatanaHort(Codec<DefaultFeatureConfig> configCodec, StructureGeneratorFactory<DefaultFeatureConfig> piecesGenerator) {
+        super(configCodec, piecesGenerator);
+    }
+    /*
+    public KatanaHort(Codec<DefaultFeatureConfig> codec) {
         super(codec);
     }
 
@@ -40,4 +45,6 @@ public class katanaHort extends StructureFeature<DefaultFeatureConfig> {
     }
 
     }
+
+     */
 }

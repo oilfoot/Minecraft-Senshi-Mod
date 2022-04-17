@@ -29,7 +29,7 @@ public class Senshi implements ModInitializer {
         new ModEntities();
         ModEntities.init();
         ModBlocks.registerBlocks();
-        EnhancementOreGeneration.GenerateEnhacementOre();
+        //TODO EnhancementOreGeneration.GenerateEnhacementOre();
         ModStructures.RegisterStructures();
     }
 }

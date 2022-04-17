@@ -1,7 +1,7 @@
 package com.oilfoot.senshi.armor.takeda;
 
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorItem;
-import software.bernie.geckolib3.renderer.geo.GeoArmorRenderer;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 public class TakedaSamuraiArmorRenderer extends GeoArmorRenderer<TakedaSamuraiArmorItem> {
     public TakedaSamuraiArmorRenderer() {

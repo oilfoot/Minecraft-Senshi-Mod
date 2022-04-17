@@ -1,10 +1,9 @@
 package com.oilfoot.senshi.registry;
 
-import com.oilfoot.senshi.generation.structures.katanaHort.katanaHort;
-import com.oilfoot.senshi.generation.structures.katanaHort.katanaHortPiece;
+import com.oilfoot.senshi.generation.structures.katanaHort.KatanaHort;
+import com.oilfoot.senshi.generation.structures.katanaHort.KatanaHortPiece;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -18,12 +17,12 @@ import net.minecraft.world.gen.feature.StructureFeature;
 public class ModStructures {
 
     //Katana Hort
-    public static final StructurePieceType KATANAHORT_PIECE = katanaHortPiece::new;
-    private static final StructureFeature<DefaultFeatureConfig> KATANAHORT_STRUCTURE = new katanaHort(DefaultFeatureConfig.CODEC);
-    private static final ConfiguredStructureFeature<?, ?> KATANAHORT_CONFIGURED = KATANAHORT_STRUCTURE.configure(DefaultFeatureConfig.DEFAULT);
+    //public static final StructurePieceType KATANAHORT_PIECE = KatanaHortPiece::new;
+    //private static final StructureFeature<DefaultFeatureConfig> KATANAHORT_STRUCTURE = new KatanaHort(DefaultFeatureConfig.CODEC);
+    //private static final ConfiguredStructureFeature<?, ?> KATANAHORT_CONFIGURED = KATANAHORT_STRUCTURE.configure(DefaultFeatureConfig.DEFAULT);
 
     public static void RegisterStructures() {
-
+/*
         //Katana Hort
         Registry.register(Registry.STRUCTURE_PIECE, new Identifier("senshi", "katanahort_piece"), KATANAHORT_PIECE);
         FabricStructureBuilder.create(new Identifier("senshi","katanahort_structure"), KATANAHORT_STRUCTURE)
@@ -40,4 +39,7 @@ public class ModStructures {
 
         }
 
+ */
+
     }
+}
