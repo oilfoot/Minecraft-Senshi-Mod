@@ -8,12 +8,14 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 
-public class katanaHortGenerator {
+public class KatanaHortGenerator {
 
     private static final Identifier KATANA_HORT = new Identifier("katanahort_structure");
-
+/*
     public static void addPieces(StructureManager manager, BlockPos pos, BlockRotation rotation, List<StructurePiece> pieces) {
-        pieces.add(new katanaHortPiece(manager, pos, KATANA_HORT, rotation));
+        pieces.add(new KatanaHortPiece(manager, pos, KATANA_HORT, rotation));
     }
+
+ */
 
 }

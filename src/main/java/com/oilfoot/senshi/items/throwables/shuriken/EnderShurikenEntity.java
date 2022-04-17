@@ -10,7 +10,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.EndermiteEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
@@ -21,11 +20,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class enderShurikenEntity extends PersistentProjectileEntity {
+public class EnderShurikenEntity extends PersistentProjectileEntity {
     public boolean isStopped = false;
 
     @Override
@@ -38,16 +36,16 @@ public class enderShurikenEntity extends PersistentProjectileEntity {
         return new ItemStack(ModItems.ENDER_SHURIKEN);
     }
 
-    public enderShurikenEntity(EntityType<? extends enderShurikenEntity> entityType, World world) {
+    public EnderShurikenEntity(EntityType<? extends EnderShurikenEntity> entityType, World world) {
         super(entityType, world);
     }
-    public enderShurikenEntity(World world, double x, double y, double z) {
+    public EnderShurikenEntity(World world, double x, double y, double z) {
         super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, x, y, z, world);
     }
-    public enderShurikenEntity(World world) {
+    public EnderShurikenEntity(World world) {
         super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, world);
     }
-    public enderShurikenEntity(World world, LivingEntity owner) {
+    public EnderShurikenEntity(World world, LivingEntity owner) {
         super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, owner, world);
     }
 
@@ -68,7 +66,7 @@ public class enderShurikenEntity extends PersistentProjectileEntity {
             ((LivingEntity) entityHit).addStatusEffect((new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3, 2))); // applies a status effect
             entityHit.playSound(Senshi.SHURIKEN_LAND_EVENT, 2F, 1F); // plays a sound for the entity hit only
 
-            if (!this.world.isClient && !this.removed) {
+            if (!this.world.isClient && !this.isRemoved()) {
                 if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
                     if (serverPlayerEntity.networkHandler.getConnection().isOpen() && serverPlayerEntity.world == this.world) {
                         serverPlayerEntity.isSleeping();
@@ -109,7 +107,7 @@ public class enderShurikenEntity extends PersistentProjectileEntity {
             this.world.addParticle(ParticleTypes.PORTAL, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
         }
 
-        if (!this.world.isClient && !this.removed) {
+        if (!this.world.isClient && !this.isRemoved()) {
             if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
                 if (serverPlayerEntity.networkHandler.getConnection().isOpen() && serverPlayerEntity.world == this.world) {
                     serverPlayerEntity.isSleeping();
@@ -128,14 +126,14 @@ public class enderShurikenEntity extends PersistentProjectileEntity {
             entity.fallDistance = 0.0F;
         }
 
-        this.remove();
+        this.discard();
     }
 
 
     public void tick() {
         Entity entity = this.getOwner();
         if (entity instanceof PlayerEntity && !entity.isAlive()) {
-            this.remove();
+            this.discard();
         } else {
             super.tick();
         }

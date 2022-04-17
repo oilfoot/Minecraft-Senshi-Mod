@@ -1,6 +1,7 @@
 package com.oilfoot.senshi.armor.shinobi;
 
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -9,9 +10,8 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.item.GeoArmorItem;
 
-public class ShinobiArmorItem extends GeoArmorItem implements IAnimatable {
+public class ShinobiArmorItem extends ArmorItem implements IAnimatable {
 
         private final AnimationFactory factory = new AnimationFactory(this);
 

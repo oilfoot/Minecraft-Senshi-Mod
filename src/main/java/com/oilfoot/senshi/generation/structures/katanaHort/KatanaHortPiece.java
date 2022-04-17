@@ -2,10 +2,7 @@ package com.oilfoot.senshi.generation.structures.katanaHort;
 
 import com.oilfoot.senshi.registry.ModStructures;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.structure.SimpleStructurePiece;
-import net.minecraft.structure.Structure;
-import net.minecraft.structure.StructureManager;
-import net.minecraft.structure.StructurePlacementData;
+import net.minecraft.structure.*;
 import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -16,18 +13,27 @@ import net.minecraft.world.ServerWorldAccess;
 
 import java.util.Random;
 
-    public class katanaHortPiece extends SimpleStructurePiece {
+    public class KatanaHortPiece extends SimpleStructurePiece {
+        public KatanaHortPiece(StructurePieceType type, int length, StructureManager structureManager, Identifier id, String template, StructurePlacementData placementData, BlockPos pos) {
+            super(type, length, structureManager, id, template, placementData, pos);
+        }
+
+        @Override
+        protected void handleMetadata(String metadata, BlockPos pos, ServerWorldAccess world, Random random, BlockBox boundingBox) {
+
+        }
+        /*
     private final BlockRotation rotation;
     private final Identifier template;
 
-    public katanaHortPiece(StructureManager structureManager, NbtCompound compoundTag) {
+    public KatanaHortPiece(StructureManager structureManager, NbtCompound compoundTag) {
         super(ModStructures.KATANAHORT_PIECE, compoundTag);
         this.template = new Identifier(compoundTag.getString("Template"));
         this.rotation = BlockRotation.valueOf(compoundTag.getString("Rot"));
         this.initializeStructureData(structureManager);
     }
 
-    public katanaHortPiece(StructureManager structureManager, BlockPos pos, Identifier template, BlockRotation rotation) {
+    public KatanaHortPiece(StructureManager structureManager, BlockPos pos, Identifier template, BlockRotation rotation) {
         super(ModStructures.KATANAHORT_PIECE, 0);
         this.pos = pos;
         this.rotation = rotation;
@@ -55,4 +61,6 @@ import java.util.Random;
     protected void handleMetadata(String metadata, BlockPos pos, ServerWorldAccess serverWorldAccess, Random random,
                                   BlockBox boundingBox) {
     }
+
+ */
 }

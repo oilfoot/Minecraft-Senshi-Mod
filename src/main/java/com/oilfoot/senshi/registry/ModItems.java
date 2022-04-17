@@ -11,8 +11,8 @@ import com.oilfoot.senshi.Senshi;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorMaterial;
 import com.oilfoot.senshi.items.katana.kazeshiniKatana;
-import com.oilfoot.senshi.items.throwables.shuriken.enderShurikenItem;
-import com.oilfoot.senshi.items.throwables.shuriken.shurikenItem;
+import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenItem;
+import com.oilfoot.senshi.items.throwables.shuriken.ShurikenItem;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -30,9 +30,9 @@ public class ModItems{
     public static final Item ENHANCEMENT_DUST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
 
 //Special Items
-    public static final Item SHURIKEN = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
-    public static final Item ENDER_SHURIKEN = new enderShurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
-    public static final Item KUNAI = new shurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SHURIKEN = new ShurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item ENDER_SHURIKEN = new EnderShurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item KUNAI = new ShurikenItem(new Item.Settings().group(ItemGroup.COMBAT));
 
 //BlockItems
     public static final BlockItem CHAINS = new BlockItem(ModBlocks.CHAINS, new Item.Settings().group(ItemGroup.DECORATIONS));
@@ -97,7 +97,7 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "kazeshini"), KAZESHINI);
         ServerTickEvents.END_WORLD_TICK.register((world) -> {
             for (ServerPlayerEntity player : world.getPlayers()){
-                if (player.inventory.getMainHandStack().getItem() instanceof kazeshiniKatana) {
+                if (player.getInventory().getMainHandStack().getItem() instanceof kazeshiniKatana) {
                     player.addStatusEffect(((new StatusEffectInstance(StatusEffects.SPEED, 20 * 3, 1))));
                 }
             }

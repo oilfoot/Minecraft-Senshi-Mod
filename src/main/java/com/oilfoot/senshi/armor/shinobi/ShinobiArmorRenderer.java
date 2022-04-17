@@ -2,7 +2,7 @@ package com.oilfoot.senshi.armor.shinobi;
 
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorModel;
-import software.bernie.geckolib3.renderer.geo.GeoArmorRenderer;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 public class ShinobiArmorRenderer extends GeoArmorRenderer<ShinobiArmorItem> {
     public ShinobiArmorRenderer() {

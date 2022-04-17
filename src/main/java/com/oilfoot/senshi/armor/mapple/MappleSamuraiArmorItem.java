@@ -3,6 +3,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import software.bernie.example.registry.ItemRegistry;
@@ -13,9 +14,8 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.item.GeoArmorItem;
 
-public class MappleSamuraiArmorItem extends GeoArmorItem implements IAnimatable {
+public class MappleSamuraiArmorItem extends ArmorItem implements IAnimatable {
     private final AnimationFactory factory = new AnimationFactory(this);
 
     public MappleSamuraiArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Item.Settings builder) {
