@@ -1,7 +1,9 @@
 package com.oilfoot.senshi.registry;
 
+import com.oilfoot.senshi.entities.kappa.KappaEntity;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageEntity;
 import com.oilfoot.senshi.Senshi;
+import com.oilfoot.senshi.registry.spawns.SpawnInit;
 import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenEntity;
 import com.oilfoot.senshi.items.throwables.shuriken.ShurikenEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -22,8 +24,15 @@ public class ModEntities {
     public static final EntityType<OgreRageEntity> OGRE_RAGE_ENTITY = buildEntity(OgreRageEntity::new,
             OgreRageEntity.class, 1.0F, 2.0F);
 
+    public static final EntityType<KappaEntity> KAPPA_ENTITY = buildEntity(KappaEntity::new,
+            KappaEntity.class, 1.0F, 2.0F);
+
     public static void init(){
         FabricDefaultAttributeRegistry.register(OGRE_RAGE_ENTITY, OgreRageEntity.createAttrubites());
+        FabricDefaultAttributeRegistry.register(KAPPA_ENTITY, KappaEntity.createAttrubites());
+
+        SpawnInit.init();
+
     }
 
     public static <T extends Entity> EntityType<T> buildEntity(EntityType.EntityFactory<T> entity, Class<T> entityClass, float width, float height) {
@@ -32,6 +41,7 @@ public class ModEntities {
                 .category(SpawnGroup.CREATURE).dimensions(EntityDimensions.changing(width, height)).build();
 
     }
+
 
     public static final EntityType<ShurikenEntity> SHURIKEN_ENTITY_ENTITY_TYPE = Registry.register(
             Registry.ENTITY_TYPE,

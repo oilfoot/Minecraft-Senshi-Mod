@@ -4,8 +4,11 @@ import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorRenderer;
 import com.oilfoot.senshi.armor.shinobi.ShinobiArmorRenderer;
 import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorRenderer;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorRenderer;
+import com.oilfoot.senshi.entities.kappa.KappaRenderer;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageRenderer;
+import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenRenderer;
 import com.oilfoot.senshi.items.throwables.shuriken.EntitySpawnPacket;
+import com.oilfoot.senshi.items.throwables.shuriken.ShurikenRenderer;
 import com.oilfoot.senshi.registry.ModBlocks;
 import com.oilfoot.senshi.registry.ModEntities;
 import com.oilfoot.senshi.registry.ModItems;
@@ -43,24 +46,13 @@ public class SenshiClient implements ClientModInitializer {
 
         //Entity
         EntityRendererRegistry.INSTANCE.register(ModEntities.OGRE_RAGE_ENTITY, OgreRageRenderer::new);
+        EntityRendererRegistry.INSTANCE.register(ModEntities.KAPPA_ENTITY, KappaRenderer::new);
 
-        /* TODO this
-        EntityRendererRegistry.INSTANCE.register(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
-                new shurikenRenderer(entityRenderDispatcher));
+
+        EntityRendererRegistry.INSTANCE.register(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, ShurikenRenderer::new);
+        EntityRendererRegistry.INSTANCE.register(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, EnderShurikenRenderer::new);
         receiveEntityPacket();
 
-
-
-        EntityRendererRegistry.INSTANCE.register(ModEntities.SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
-                new shurikenRenderer(entityRenderDispatcher) {});
-
-        EntityRendererRegistry.INSTANCE.register(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
-                new enderShurikenRenderer(entityRenderDispatcher));
-        receiveEntityPacket();
-
-        EntityRendererRegistry.INSTANCE.register(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, (entityRenderDispatcher, factory) ->
-                new enderShurikenRenderer(entityRenderDispatcher) {});
-         */
         //Blocks
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHAINS, RenderLayer.getCutout());
 
