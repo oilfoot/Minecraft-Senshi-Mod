@@ -1,6 +1,9 @@
 package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.ToolMaterials.*;
+import com.oilfoot.senshi.armor.fallen.FallenSamuraiArmorItem;
+import com.oilfoot.senshi.armor.kumo_no_ashi.knaArmorItem;
+import com.oilfoot.senshi.armor.kumo_no_ashi.knaArmorMaterial;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorItem;
 import com.oilfoot.senshi.armor.mapple.MappleSamuraiArmorMaterial;
 import com.oilfoot.senshi.armor.shinobi.ShinobiArmorItem;
@@ -10,10 +13,14 @@ import com.oilfoot.senshi.armor.takeda.TakedaSamuraiArmorMaterial;
 import com.oilfoot.senshi.Senshi;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorItem;
 import com.oilfoot.senshi.armor.tokugawa.TokugawaSamuraiArmorMaterial;
+import com.oilfoot.senshi.items.katana.KatanaItem;
 import com.oilfoot.senshi.items.katana.kazeshiniKatana;
+import com.oilfoot.senshi.items.long_bow.LongBowItem;
+import com.oilfoot.senshi.items.mortalblade.MortalBladeItem;
 import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenItem;
 import com.oilfoot.senshi.items.throwables.shuriken.ShurikenItem;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -38,13 +45,21 @@ public class ModItems{
     public static final BlockItem CHAINS = new BlockItem(ModBlocks.CHAINS, new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final BlockItem KATANABLOCK = new BlockItem(ModBlocks.KATANABLOCK, new Item.Settings());
     public static final BlockItem ENHANCEMENT_ORE = new BlockItem(ModBlocks.ENHANCEMENT_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final BlockItem TATAMI = new BlockItem(ModBlocks.TATAMI, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem RICE_WALL = new BlockItem(ModBlocks.RICE_WALL, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem RICE_DOOR = new BlockItem(ModBlocks.RICE_DOOR, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem SAKURA_LOG = new BlockItem(ModBlocks.SAKURA_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final BlockItem SAKURA_LEAVES = new BlockItem(ModBlocks.SAKURA_LEAVES, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final BlockItem SAKURA_SAPLING = new BlockItem(ModBlocks.SAKURA_SAPLING, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
 
 //ToolItems
-    public static final ToolItem KATANA = new SwordItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final ToolItem KATANA = new KatanaItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem SAI = new SwordItem(SaiToolMaterial.INSTANCE, -2, -0.5F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem NAGINATA = new SwordItem(NaginataToolMaterial.INSTANCE, 2, -3.4F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem BO = new SwordItem(BoToolMaterial.INSTANCE, 0, -1.8F, new Item.Settings().group(ItemGroup.COMBAT));
     public static final ToolItem KAZESHINI = new kazeshiniKatana(kazeshiniToolMaterial.INSTANCE, 0, -1F, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item LONG_BOW = new BowItem(new Item.Settings().group(ItemGroup.COMBAT).maxDamage(640));
+    public static final ToolItem MORTAL_BLADE = new MortalBladeItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
 
 //ArmorItems
 
@@ -72,6 +87,15 @@ public class ModItems{
     public static final Item TOKUGAWA_HAIDATE = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
     public static final Item TOKUGAWA_WARAJI = new TokugawaSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
 
+    //Fallen Armor
+    public static final Item FALLEN_KABUTO = new FallenSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item FALLEN_DO = new FallenSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item FALLEN_HAIDATE = new FallenSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item FALLEN_WARAJI = new FallenSamuraiArmorItem(TokugawaSamuraiArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.COMBAT));
+
+    //Special Armor
+    public static final Item KUMO_NO_ASHI = new knaArmorItem(knaArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.COMBAT));
+
     public static void RegisterItems() {
 
     //basicItems
@@ -88,6 +112,12 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "chains"), CHAINS);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katanablock"), KATANABLOCK);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "enhancement_ore"), ENHANCEMENT_ORE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tatami"), TATAMI);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "rice_wall"), RICE_WALL);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "rice_door"), RICE_DOOR);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sakura_log"), SAKURA_LOG);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sakura_leaves"), SAKURA_LEAVES);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "sakura_sapling"), SAKURA_SAPLING);
 
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
@@ -102,6 +132,8 @@ public class ModItems{
                 }
             }
         });
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "long_bow"), LONG_BOW);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mortal_blade"), MORTAL_BLADE);
 
     //ArmorItems//
 
@@ -129,5 +161,13 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_haidate"), TOKUGAWA_HAIDATE);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "tokugawa_waraji"), TOKUGAWA_WARAJI);
 
+        //Fallen Armor
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "fallen_kabuto"), FALLEN_KABUTO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "fallen_do"), FALLEN_DO);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "fallen_haidate"), FALLEN_HAIDATE);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "fallen_waraji"), FALLEN_WARAJI);
+
+        //Special Armor
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "kumo_no_ashi"), KUMO_NO_ASHI);
     }
 }

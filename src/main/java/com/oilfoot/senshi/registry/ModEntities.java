@@ -1,9 +1,10 @@
 package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.entities.kappa.KappaEntity;
+import com.oilfoot.senshi.entities.kumocrawler.KumoCrawlerEntity;
+import com.oilfoot.senshi.entities.kumotoko.KumotokoEntity;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageEntity;
 import com.oilfoot.senshi.Senshi;
-import com.oilfoot.senshi.registry.spawns.SpawnInit;
 import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenEntity;
 import com.oilfoot.senshi.items.throwables.shuriken.ShurikenEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -27,11 +28,17 @@ public class ModEntities {
     public static final EntityType<KappaEntity> KAPPA_ENTITY = buildEntity(KappaEntity::new,
             KappaEntity.class, 1.0F, 2.0F);
 
+    public static final EntityType<KumotokoEntity> KUMOTOKO_ENTITY = buildEntity(KumotokoEntity::new,
+            KumotokoEntity.class, 1.0F, 2.0F);
+
+    public static final EntityType<KumoCrawlerEntity> KUMOCRAWLER_ENTITY = buildEntity(KumoCrawlerEntity::new,
+            KumoCrawlerEntity.class, 1.0F, 2.0F);
+
     public static void init(){
         FabricDefaultAttributeRegistry.register(OGRE_RAGE_ENTITY, OgreRageEntity.createAttrubites());
         FabricDefaultAttributeRegistry.register(KAPPA_ENTITY, KappaEntity.createAttrubites());
-
-        SpawnInit.init();
+        FabricDefaultAttributeRegistry.register(KUMOTOKO_ENTITY, KumotokoEntity.createAttrubites());
+        FabricDefaultAttributeRegistry.register(KUMOCRAWLER_ENTITY, KumoCrawlerEntity.createAttrubites());
 
     }
 

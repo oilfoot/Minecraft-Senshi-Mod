@@ -10,5 +10,23 @@
     "sounds": [
       "senshi:shuriken_land"
     ]
+  },
+  "kappa_ambient": {
+    "subtitle": "subtitles.senshi.kappa_ambient",
+    "sounds": [
+      "senshi:kappa_ambient"
+    ]
+  },
+  "kappa_hurt": {
+    "subtitle": "subtitles.senshi.kappa_hurt",
+    "sounds": [
+      "senshi:kappa_hurt"
+    ]
+  },
+  "kappa_death": {
+    "subtitle": "subtitles.senshi.kappa_death",
+    "sounds": [
+      "senshi:kappa_death"
+    ]
   }
 }
