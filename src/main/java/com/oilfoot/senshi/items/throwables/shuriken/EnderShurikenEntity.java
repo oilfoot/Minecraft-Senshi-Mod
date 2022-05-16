@@ -1,8 +1,8 @@
 package com.oilfoot.senshi.items.throwables.shuriken;
 
 import com.oilfoot.senshi.Senshi;
-import com.oilfoot.senshi.registry.ModEntities;
-import com.oilfoot.senshi.registry.ModItems;
+import com.oilfoot.senshi.registry.SenshiEntities;
+import com.oilfoot.senshi.registry.SenshiItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -33,20 +33,20 @@ public class EnderShurikenEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(ModItems.ENDER_SHURIKEN);
+        return new ItemStack(SenshiItems.ENDER_SHURIKEN);
     }
 
     public EnderShurikenEntity(EntityType<? extends EnderShurikenEntity> entityType, World world) {
         super(entityType, world);
     }
     public EnderShurikenEntity(World world, double x, double y, double z) {
-        super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, x, y, z, world);
+        super(SenshiEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, x, y, z, world);
     }
     public EnderShurikenEntity(World world) {
-        super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, world);
+        super(SenshiEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, world);
     }
     public EnderShurikenEntity(World world, LivingEntity owner) {
-        super(ModEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, owner, world);
+        super(SenshiEntities.ENDER_SHURIKEN_ENTITY_ENTITY_TYPE, owner, world);
     }
 
     @Override

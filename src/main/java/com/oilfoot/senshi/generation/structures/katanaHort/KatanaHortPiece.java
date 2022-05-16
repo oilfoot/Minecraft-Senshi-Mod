@@ -1,11 +1,6 @@
 package com.oilfoot.senshi.generation.structures.katanaHort;
 
-import com.oilfoot.senshi.registry.ModStructures;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.structure.*;
-import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;

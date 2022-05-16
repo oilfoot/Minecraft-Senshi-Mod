@@ -1,6 +1,7 @@
 package com.oilfoot.senshi;
 
-import com.oilfoot.senshi.generation.ores.EnhancementOreGeneration;
+import com.oilfoot.senshi.generation.SenshiTreeGeneration;
+import com.oilfoot.senshi.generation.SenshiWorldGen;
 import com.oilfoot.senshi.registry.*;
 import com.oilfoot.senshi.world.feature.SenshiConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
@@ -33,13 +34,14 @@ public class Senshi implements ModInitializer {
     public void onInitialize() {
 
         GeckoLib.initialize();
-        ModItems.RegisterItems();
-        new ModEntities();
-        ModEntities.init();
-        ModBlocks.registerBlocks();
+        SenshiItems.RegisterItems();
+        new SenshiEntities();
+        SenshiEntities.init();
+        SenshiBlocks.registerBlocks();
         EntitySpawns.init();
         SenshiConfiguredFeatures.registerConfiguredFeatures();
         //TODO EnhancementOreGeneration.GenerateEnhacementOre();
-        ModStructures.RegisterStructures();
+        //SenshiStructures.RegisterStructures();
+        //SenshiTreeGeneration.generateTrees();
     }
 }

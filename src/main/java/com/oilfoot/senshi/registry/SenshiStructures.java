@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 
-public class ModStructures {
+public class SenshiStructures {
 
     //Katana Hort
     //public static final StructurePieceType KATANAHORT_PIECE = KatanaHortPiece::new;

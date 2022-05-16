@@ -1,11 +1,10 @@
 package com.oilfoot.senshi.items.throwables.shuriken;
 
 import com.oilfoot.senshi.Senshi;
-import com.oilfoot.senshi.registry.ModItems;
+import com.oilfoot.senshi.registry.SenshiItems;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
@@ -15,7 +14,7 @@ import net.minecraft.util.math.Vec3f;
 
 public class EnderShurikenRenderer extends ShurikenProjectileRenderer<EnderShurikenEntity> {
 
-    public static final ItemStack STACK = new ItemStack(ModItems.ENDER_SHURIKEN);
+    public static final ItemStack STACK = new ItemStack(SenshiItems.ENDER_SHURIKEN);
 
     public EnderShurikenRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
