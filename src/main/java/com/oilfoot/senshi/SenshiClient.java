@@ -11,6 +11,7 @@ import com.oilfoot.senshi.entities.kappa.KappaRenderer;
 import com.oilfoot.senshi.entities.kumocrawler.KumoCrawlerRenderer;
 import com.oilfoot.senshi.entities.kumotoko.KumotokoRenderer;
 import com.oilfoot.senshi.entities.ogre_of_rage.OgreRageRenderer;
+import com.oilfoot.senshi.entities.samurai.SamuraiRenderer;
 import com.oilfoot.senshi.items.katana.KatanaRenderer;
 import com.oilfoot.senshi.items.mortalblade.MortalBladeRenderer;
 import com.oilfoot.senshi.items.throwables.shuriken.EnderShurikenRenderer;
@@ -69,6 +70,7 @@ public class SenshiClient implements ClientModInitializer {
         EntityRendererRegistry.INSTANCE.register(SenshiEntities.KAPPA_ENTITY, KappaRenderer::new);
         EntityRendererRegistry.INSTANCE.register(SenshiEntities.KUMOTOKO_ENTITY, KumotokoRenderer::new);
         EntityRendererRegistry.INSTANCE.register(SenshiEntities.KUMOCRAWLER_ENTITY, KumoCrawlerRenderer::new);
+        EntityRendererRegistry.INSTANCE.register(SenshiEntities.SAMURAI_ENTITY, SamuraiRenderer::new);
 
 
         EntityRendererRegistry.INSTANCE.register(SenshiEntities.SHURIKEN_ENTITY_ENTITY_TYPE, ShurikenRenderer::new);

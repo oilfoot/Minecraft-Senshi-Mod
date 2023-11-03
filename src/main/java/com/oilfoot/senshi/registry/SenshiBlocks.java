@@ -2,6 +2,7 @@ package com.oilfoot.senshi.registry;
 
 import com.oilfoot.senshi.Senshi;
 import com.oilfoot.senshi.blocks.*;
+import com.oilfoot.senshi.world.feature.tree.MappleSaplingGenerator;
 import com.oilfoot.senshi.world.feature.tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -61,13 +62,17 @@ public class SenshiBlocks {
     public static final Block SHRINE = new ShrineBlock(FabricBlockSettings.of(Material.STONE)
             //TODO add tool tag in data
             .sounds(BlockSoundGroup.STONE)
-            .strength(2.5F)
+            .strength(1.5F)
             .nonOpaque());
 
     public static final Block ROCK_PATH = new RockPathBlock(FabricBlockSettings.of(Material.STONE)
             .sounds(BlockSoundGroup.STONE)
             .strength(2.5F)
             .nonOpaque());
+
+    public static final Block JAPANESE_LANTERN = new JapaneseLanternBlock(FabricBlockSettings.copy(Blocks.LANTERN).breakInstantly());
+
+    public static final Block TRADITIONAL_LANTERN = new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN).breakInstantly());
 
 
     public static final Block SAKURA_LOG = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG));
@@ -76,8 +81,10 @@ public class SenshiBlocks {
     public static final Block SAKURA_PLANKS = new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
     public static final Block WAXED_SAKURA_PLANKS = new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
     public static final Block SAKURA_SLAB = new SlabBlock(FabricBlockSettings.copy(Blocks.OAK_SLAB));
-    public static final Block JAPANESE_LANTERN = new JapaneseLanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
-    public static final Block TRADITIONAL_LANTERN = new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static final Block MAPPLE_LOG = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG));
+    public static final Block MAPPLE_LEAVES = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES));
+    public static final Block MAPPLE_SAPLING = new MappleSaplingBlock(new MappleSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING));
+    public static final Block MAPPLE_PLANKS = new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
 
 
     public static void registerBlocks() {
@@ -99,6 +106,10 @@ public class SenshiBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "ground_lantern"), GROUND_LANTERN);
         Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "shrine"), SHRINE);
         Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "rock_path"), ROCK_PATH);
+        Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "mapple_log"), MAPPLE_LOG);
+        Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "mapple_leaves"), MAPPLE_LEAVES);
+        Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "mapple_sapling"), MAPPLE_SAPLING);
+        Registry.register(Registry.BLOCK, new Identifier(Senshi.MOD_ID, "mapple_planks"), MAPPLE_PLANKS);
 
     }
 

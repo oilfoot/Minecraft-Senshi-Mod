@@ -10,12 +10,12 @@ import net.minecraft.sound.SoundEvent;
 public class MappleSamuraiArmorMaterial implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
-    private static final int[] PROTECTION_VALUES = new int[] {2, 5, 6, 3};
+    private static final int[] PROTECTION_VALUES = new int[] {4, 9, 6, 3};
     public static final MappleSamuraiArmorMaterial INSTANCE = new MappleSamuraiArmorMaterial();
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()]*25;
+        return BASE_DURABILITY[slot.getEntitySlotId()]*32;
     }
 
     @Override
@@ -45,11 +45,11 @@ public class MappleSamuraiArmorMaterial implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 5.0F;
+        return 3.5F;
     }
 
     @Override
     public float getKnockbackResistance() {
-        return 0;
+        return 0.1F;
     }
 }

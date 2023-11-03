@@ -60,6 +60,10 @@ public class SenshiItems {
     public static final BlockItem GROUND_LANTERN = new BlockItem(SenshiBlocks.GROUND_LANTERN, new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final BlockItem SHRINE = new BlockItem(SenshiBlocks.SHRINE, new Item.Settings().group(ItemGroup.DECORATIONS));
     public static final BlockItem ROCK_PATH = new BlockItem(SenshiBlocks.ROCK_PATH, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem MAPPLE_LOG = new BlockItem(SenshiBlocks.MAPPLE_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
+    public static final BlockItem MAPPLE_LEAVES = new BlockItem(SenshiBlocks.MAPPLE_LEAVES, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem MAPPLE_SAPLING = new BlockItem(SenshiBlocks.MAPPLE_SAPLING, new Item.Settings().group(ItemGroup.DECORATIONS));
+    public static final BlockItem MAPPLE_PLANKS = new BlockItem(SenshiBlocks.MAPPLE_PLANKS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS));
 
 //ToolItems
     public static final ToolItem KATANA = new KatanaItem(KatanaToolMaterial.INSTANCE, 2, -1.5F, new Item.Settings().group(ItemGroup.COMBAT));
@@ -140,6 +144,10 @@ public class SenshiItems {
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "ground_lantern"), GROUND_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "shrine"), SHRINE);
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "rock_path"), ROCK_PATH);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_log"), MAPPLE_LOG);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_leaves"), MAPPLE_LEAVES);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_sapling"), MAPPLE_SAPLING);
+        Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "mapple_planks"), MAPPLE_PLANKS);
 
     //ToolItems//
         Registry.register(Registry.ITEM, new Identifier(Senshi.MOD_ID, "katana"), KATANA);
